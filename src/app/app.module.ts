@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeModule } from './pages/home/home.module';
 import { AppRoutingModule } from './routers/app-routing.module';
 import { AppBootstrapModule } from './app-bootstrap.module';
 // import { HeaderModule } from './shared/header/header.module';
@@ -16,6 +16,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
   ],
   imports: [
     BrowserModule,
+    HomeModule,
     AppRoutingModule,
     AppBootstrapModule,
     NgbModule.forRoot(),
