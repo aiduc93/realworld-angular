@@ -1,0 +1,24 @@
+.navbar-brand {
+    color: #5CB85C;
+    font-weight: 500;
+    font-size: 1.5rem;
+    &:hover {
+        color: #5CB85C;
+    }
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-link {
+    padding-right: .5rem !important;
+    padding-left: .5rem !important;
+}
+
+/* Fixes dropdown menus placed on the right side */
+
+.ml-auto .dropdown-menu {
+    left: auto !important;
+    right: 0px;
+}
