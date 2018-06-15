@@ -12,44 +12,64 @@
       <div>
         <tabset>
           <tab title="Your Feed">
-            <div class="article-preview">
+            <div class="article-preview" *ngFor="let article of articlesList">
               <div class="article-info">
                 <a href="#" class="avatar">
-                  <img src="https://static.productionready.io/images/smiley-cyrus.jpg" alt="">
+                  <img src="{{article.author.image}}" alt="">
                 </a>
                 <div class="info">
-                  <a href="" class="author">Duc.Vuong</a>
-                  <span class="date">Thu Jun 14 2018</span>
+                  <a href="" class="author">{{article.author.username}}</a>
+                  <span class="date">{{article.updatedAt | date: 'fullDate'}}</span>
                 </div>
                 <div class="like float-right">
-                  <button class="btn btn-sm btn-outline-success">
-                    <i class="fa fa-heart"></i>
+                  <button class="btn btn-sm btn-outline-success" [class.active]='article.favorited === true'>
+                    <i class="fa fa-heart"> {{article.favoritesCount}}</i>
                   </button>
                 </div>
               </div>
               <a class="article-content" href="">
-                <h3>Azrael's artical title</h3>
-                <p>Cùng anh băng qua bao đại dương</p>
+                <h3>{{article.title}}</h3>
+                <p>{{article.description}}</p>
                 <span>Read more...</span>
               </a>
             </div>
-            
           </tab>
           <tab title="Global Feed">
-            Global Feed
+              <div class="article-preview" *ngFor="let article of articlesList">
+                  <div class="article-info">
+                    <a href="#" class="avatar">
+                      <img src="{{article.author.image}}" alt="">
+                    </a>
+                    <div class="info">
+                      <a href="" class="author">{{article.author.username}}</a>
+                      <span class="date">{{article.updatedAt | date: 'fullDate'}}</span>
+                    </div>
+                    <div class="like float-right">
+                      <button class="btn btn-sm btn-outline-success" [class.active]='article.favorited === true'>
+                        <i class="fa fa-heart"> {{article.favoritesCount}}</i>
+                      </button>
+                    </div>
+                  </div>
+                  <a class="article-content" href="">
+                    <h3>{{article.title}}</h3>
+                    <p>{{article.description}}</p>
+                    <span>Read more...</span>
+                  </a>
+                </div>
           </tab>
           <tab title="Tag">
             Tag
           </tab>
         </tabset>
       </div>
-
-      <!-- <app-tab tabTitle="Tab 2">Tab 2 Content</app-tab> -->
     </div>
-
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      TAGS
+      <div class="sidebar">
+        <p>Popular Tag</p>
+        <div class="tags-list">
+          <a class="tag" *ngFor="let tag of tags">{{tag}}</a>
+        </div>
+      </div>
     </div>
-
   </div>
 </div>

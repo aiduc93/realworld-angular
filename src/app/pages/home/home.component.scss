@@ -1,6 +1,9 @@
 $black: #000;
 $white: #fff;
+$white-1:#f3f3f3;
 $grey: #c0c0c0;
+$grey-1: #818a91;
+$grey-2: #687077;
 .banner {
     padding: 25px 0;
     background-color: #5CB85C;
@@ -46,11 +49,34 @@ $grey: #c0c0c0;
         width: 32px;
         border-radius: 30px;
     }
+    .active {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
 }
 
 .article-content {
     color: $black;
     &:hover {
         text-decoration: inherit;
+    }
+}
+
+.sidebar {
+    background-color: $white-1;
+    padding: 0.5rem 0.5rem;
+    .tag {
+        background-color: $grey-1;
+        font-size: 0.8rem;
+        color: $white;
+        display: inline-block;
+        margin: 0.2rem 0.2rem;
+        padding: 0rem 0.3rem;
+        border-radius: 0.8rem;
+        &:focus, &:hover, &:visited, &:active {
+            background-color: $grey-2;
+            text-decoration: underline;
+        }
     }
 }

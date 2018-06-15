@@ -18,6 +18,6 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     TabComponent
-  ]
+]
 })
 export class HomeModule { }

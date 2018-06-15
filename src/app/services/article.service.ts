@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ArticleModelResponse } from '../models/article';
+import { Tag } from '../models/tag';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -15,6 +16,11 @@ export class ArticleService {
   getAllGlobalArticles(): Observable<ArticleModelResponse[]> {
     return this.apiService.get('/articles?limit=10&offset=0').pipe(map(data => {
       return data['articles'];
+    }));
+  }
+  getAllTag() : Observable<Tag[]> {
+    return this.apiService.get('/tags').pipe(map(data => {
+      return data['tags'];
     }));
   }
 }
