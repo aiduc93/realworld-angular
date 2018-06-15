@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import {  Tab } from '../../shared/tabs/tab.component';
-import {  TabsComponent } from '../../shared/tabs/tabs.component';
+import {  TabComponent } from '../../shared/tabs/tabs.component';
 const routes: Routes = [
   {
     path: 'index',
@@ -18,8 +17,7 @@ const routes: Routes = [
   ],
   declarations: [
     HomeComponent,
-    Tab,
-    TabsComponent
+    TabComponent
   ]
 })
 export class HomeModule { }

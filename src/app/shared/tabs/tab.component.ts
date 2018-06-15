@@ -1,15 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-tab',
+  selector: 'tab',
   template: `
-    <div [hidden]="!active" class="pane">
-      <ng-content></ng-content>
-    </div>
-  `,
-  styleUrls: ['./tabs.component.scss']
+    <ng-content *ngIf="active"></ng-content>
+  `
 })
 export class Tab {
-  @Input('tabTitle') title: string;
+
+  @Input() title = '';
   @Input() active = false;
+  @Input() disabled = false;
+
 }
