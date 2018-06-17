@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: '../pages/signup/signup.module#SignupModule'
     },
     {
+        path: 'setting',
+        loadChildren: '../pages/setting/setting.module#SettingModule'
+    },
+    {
         path: '**',
         loadChildren: '../pages/no-found/no-found.module#NoFoundModule'
     },
