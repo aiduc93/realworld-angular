@@ -4,6 +4,7 @@ $white-1:#f3f3f3;
 $grey: #c0c0c0;
 $grey-1: #818a91;
 $grey-2: #687077;
+$green: #28a745;
 .banner {
     padding: 25px 0;
     background-color: #5CB85C;
@@ -50,9 +51,9 @@ $grey-2: #687077;
         border-radius: 30px;
     }
     .active {
-        color: #fff;
-        background-color: #28a745;
-        border-color: #28a745;
+        color: $white;
+        background-color: $green;
+        border-color: $green;
     }
 }
 

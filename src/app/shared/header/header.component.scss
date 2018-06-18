@@ -2,7 +2,7 @@
     color: #5CB85C;
     font-weight: 700;
     font-size: 1.5rem;
-    &:hover {
+    &:hover, &:active, &:focus {
         color: #5CB85C;
     }
 }

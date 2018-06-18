@@ -4,16 +4,8 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'index',
+        redirectTo: '',
         pathMatch: 'full'
-    },
-    {
-        path: 'signin',
-        loadChildren: '../pages/signin/signin.module#SigninModule'
-    },
-    {
-        path: 'signup',
-        loadChildren: '../pages/signup/signup.module#SignupModule'
     },
     {
         path: 'setting',
