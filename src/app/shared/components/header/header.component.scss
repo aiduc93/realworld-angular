@@ -2,7 +2,9 @@
     color: #5CB85C;
     font-weight: 700;
     font-size: 1.5rem;
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
         color: #5CB85C;
     }
 }
@@ -14,12 +16,19 @@
 .nav-link {
     padding-right: .5rem;
     padding-left: .5rem;
+    .user-pic {
+        height: 26px;
+        border-radius: 50px;
+        float: left;
+        margin-right: 5px;
+    }
 }
 
 .ml-auto .dropdown-menu {
     left: auto;
     right: 0px;
 }
+
 // i {
 //     font-family: '"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"'
 // }

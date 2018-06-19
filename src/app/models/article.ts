@@ -63,7 +63,6 @@ export class ArticleModel implements Article {
                 tagList: article.tagList,
                 title: article.title,
             }
-
         }
     }
 }

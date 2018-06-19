@@ -45,7 +45,7 @@ export class SettingComponent implements OnInit {
     console.log('user', user);
     
     this.userService.updateUser(user).subscribe(
-      updatedUser => this.router.navigateByUrl('/' + updatedUser['username']),
+      updatedUser => this.router.navigateByUrl('/'),
 
     );
   }

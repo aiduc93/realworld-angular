@@ -26,6 +26,7 @@ export class ArticleService {
   }
 
   addArticle(article): Observable<ArticlePost> {
+    console.log("1",article)
       return this.apiService.post('/articles', article);
   }
 }

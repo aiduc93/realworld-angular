@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ArticleService } from '../../services/article.service';
+import { ArticlePost } from '../../models/article';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -25,9 +26,10 @@ export class ArticleComponent implements OnInit {
   }
 
   handleSubmit() {
-    const article = this.articleForm.value;
- 
-    article.tagList = article.tagList.split(',');
+    const article = new ArticlePost(this.articleForm.value) ;
+    console.log('article', article.article.tagList);
+    return;
+    // article.article.tagList = article.article['tagList'].split(',');
     console.log('article', article);
     this.articleService.addArticle(article).subscribe(data => {
       console.log('data',data);
