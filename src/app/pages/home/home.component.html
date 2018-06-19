@@ -1,4 +1,4 @@
-<div class="home-page">
+<div class="home-page" *appShowAuth="false">
   <div class="banner">
     <div class="container text-center">
       <h1 class="logo">conduit</h1>
@@ -35,27 +35,27 @@
             </div>
           </tab>
           <tab title="Global Feed">
-              <div class="article-preview" *ngFor="let article of articlesList">
-                  <div class="article-info">
-                    <a href="#" class="avatar">
-                      <img src="{{article.author.image}}" alt="">
-                    </a>
-                    <div class="info">
-                      <a href="" class="author">{{article.author.username}}</a>
-                      <span class="date">{{article.updatedAt | date: 'fullDate'}}</span>
-                    </div>
-                    <div class="like float-right">
-                      <button class="btn btn-sm btn-outline-success" [class.active]='article.favorited === true'>
-                        <i class="fa fa-heart"> {{article.favoritesCount}}</i>
-                      </button>
-                    </div>
-                  </div>
-                  <a class="article-content" href="">
-                    <h3>{{article.title}}</h3>
-                    <p>{{article.description}}</p>
-                    <span>Read more...</span>
-                  </a>
+            <div class="article-preview" *ngFor="let article of articlesList">
+              <div class="article-info">
+                <a href="#" class="avatar">
+                  <img src="{{article.author.image}}" alt="">
+                </a>
+                <div class="info">
+                  <a href="" class="author">{{article.author.username}}</a>
+                  <span class="date">{{article.updatedAt | date: 'fullDate'}}</span>
                 </div>
+                <div class="like float-right">
+                  <button class="btn btn-sm btn-outline-success" [class.active]='article.favorited === true'>
+                    <i class="fa fa-heart"> {{article.favoritesCount}}</i>
+                  </button>
+                </div>
+              </div>
+              <a class="article-content" href="">
+                <h3>{{article.title}}</h3>
+                <p>{{article.description}}</p>
+                <span>Read more...</span>
+              </a>
+            </div>
           </tab>
           <tab title="Tag">
             Tag

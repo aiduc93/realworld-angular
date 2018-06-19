@@ -6,7 +6,8 @@ interface User {
     image: string;
     token: string;
     updatedAt: string;
-    username: string;
+    username: boolean;
+    password ?: string;
 }
 
 export class UserResponse implements User {
@@ -17,7 +18,8 @@ export class UserResponse implements User {
     image: string;
     token: string;
     updatedAt: string;
-    username: string;
+    username: boolean;
+    password: string;
     constructor(user: User) {
         if (user) {
             this.bio = user.bio;
@@ -28,6 +30,7 @@ export class UserResponse implements User {
             this.token = user.token;
             this.updatedAt = user.updatedAt;
             this.username = user.username;
+            this.password = user.password;
         }
     }
 }

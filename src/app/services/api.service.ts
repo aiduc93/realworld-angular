@@ -16,14 +16,13 @@ export class ApiService {
   }
 
   post<T>(path: string, param: HttpParams): Observable<T> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'authorization': this.token
-      })
-    };
-    return this.http.post<T>(`${environment.apiUrl}${path}`, param, httpOptions);
+    return this.http.post<T>(`${environment.apiUrl}${path}`, param);
   }
+
+  put<T>(path: string, param: HttpParams): Observable<T> {
+    return this.http.put<T>(`${environment.apiUrl}${path}`, param);
+  }
+
 
   delete<T>(path: string): Observable<T> {
     return this.http.delete<T>(`${environment.apiUrl}${path}`);

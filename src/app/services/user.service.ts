@@ -23,19 +23,18 @@ export class UserService {
     private jwtService: JwtService
   ) { }
 
-  checkUserInLocalStorage() {
+  checkUserInLocalStorage():  Observable<UserResponse> {
     if (this.jwtService.getToken()) {
-      this.apiService.get('/user').subscribe(
-        data => this.setAuth(data['user']),
-        err => this.clearAuth()
-      );
+      return this.apiService.get('/user').pipe(map(data => {
+        return data['user'];
+      }));
     } else {
       this.clearAuth();
     }
   }
 
   updateUser(user): Observable<UserPost> {
-    return this.apiService.post('/user', user).pipe(map(data => {
+    return this.apiService.put('/user', user).pipe(map(data => {
       this.currentUserSubject.next(data['user']);
       return data['user'];
     }), )

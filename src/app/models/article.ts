@@ -67,3 +67,10 @@ export class ArticleModel implements Article {
         }
     }
 }
+
+export class ArticlePost {
+    article: ArticleModel;
+    constructor(article: ArticleModel) {
+        this.article = article;
+    }
+}

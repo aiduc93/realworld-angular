@@ -2,18 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <form>
+        <form [formGroup]="articleForm" (ngSubmit)="handleSubmit()">
           <div class="form-group">
-            <input type="text" name="title" class="form-control" placeholder="Article Title">
+            <input type="text" name="title" class="form-control" placeholder="Article Title" formControlName="title">
           </div>
           <div class="form-group">
-            <input type="text" name="body" class="form-control" placeholder="What's this article about?">
+            <input type="text" name="body" class="form-control" placeholder="What's this article about?" formControlName="body">
           </div>
           <div class="form-group">
-            <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Write your article (in markdown)"></textarea>
+            <textarea name="description" class="form-control" id="" cols="30" rows="10" placeholder="Write your article (in markdown)" formControlName="description"></textarea>
           </div>
           <div class="form-group">
-            <input type="text" name="tagList" class="form-control" placeholder="Enter tags">
+            <input type="text" name="tagList" class="form-control" placeholder="Enter tags" formControlName="tagList">
           </div>
           <button class="btn btn-md btn-success float-right">Publish Article</button>
         </form>

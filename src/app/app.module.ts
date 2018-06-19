@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { HomeModule } from './pages/home/home.module';
@@ -19,10 +18,7 @@ import { AppRoutingModule } from './routers/app-routing.module';
     SharedModule,
     AppRoutingModule
   ],
-  providers: [
-
-  ],
-
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

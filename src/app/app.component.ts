@@ -9,7 +9,10 @@ export class AppComponent implements OnInit {
   constructor(
     private userService: UserService
   ) { }
+  
   ngOnInit() {
-    this.userService.checkUserInLocalStorage();
+    this.userService.checkUserInLocalStorage().subscribe(data => {
+      this.userService.setAuth(data)
+    });
   }
 }

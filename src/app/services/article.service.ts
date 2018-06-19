@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ArticleModelResponse } from '../models/article';
+import { ArticleModelResponse, ArticlePost } from '../models/article';
 import { Tag } from '../models/tag';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
@@ -18,9 +18,14 @@ export class ArticleService {
       return data['articles'];
     }));
   }
+
   getAllTag() : Observable<Tag[]> {
     return this.apiService.get('/tags').pipe(map(data => {
       return data['tags'];
     }));
+  }
+
+  addArticle(article): Observable<ArticlePost> {
+      return this.apiService.post('/articles', article);
   }
 }

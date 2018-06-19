@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
   }
 
   setAuthen() {
-    console.log('1')
     this.userService.isAuthenticated.subscribe(isAuthenticated => {
       this.isAuthenticated = isAuthenticated;
     })
