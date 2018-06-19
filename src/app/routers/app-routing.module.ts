@@ -8,6 +8,10 @@ const routes: Routes = [
         pathMatch: 'full'
     },
     {
+        path: 'editor',
+        loadChildren: '../pages/article/article.module#ArticleModule'
+    },
+    {
         path: 'setting',
         loadChildren: '../pages/setting/setting.module#SettingModule'
     },

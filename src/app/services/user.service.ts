@@ -53,15 +53,12 @@ export class UserService {
   }
 
   setAuth(user: UserResponse) {
-    console.log('1111');
-
     this.jwtService.saveToken(user.token);
     this.currentUserSubject.next(user);
     this.isAuthenticatedSubject.next(true);
   }
 
   clearAuth() {
-    console.log('loi');
     this.jwtService.clearToken();
     this.currentUserSubject.next({} as UserResponse);
     this.isAuthenticatedSubject.next(false);

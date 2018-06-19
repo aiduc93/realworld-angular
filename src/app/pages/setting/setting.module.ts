@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
 import { SettingComponent } from './setting.component';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 const routes: Routes = [
   {
     path: '',
-    component: SettingComponent
+    component: SettingComponent,
+    canActivate: [AuthService]
   }
 ]
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   declarations: [SettingComponent]

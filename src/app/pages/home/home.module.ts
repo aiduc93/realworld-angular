@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { TabComponent } from '../../shared/tabs/tabs.component';
+import { SharedModule } from '../../shared/shared.module';
 import { HomeAuthService } from '../../services/home-auth.service';
 const routes: Routes = [
   {
@@ -16,12 +15,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
-    HomeComponent,
-    TabComponent
+    HomeComponent
   ],
   providers: [
     HomeAuthService

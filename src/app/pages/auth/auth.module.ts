@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
 import { AuthComponent } from './auth.component';
 import { Routes, RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NoAuthGuard } from '../../services/no-auth.service';
 const routes: Routes = [
   {
@@ -18,9 +17,8 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
   ],
   declarations: [AuthComponent],
   providers: [
