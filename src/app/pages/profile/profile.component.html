@@ -1,14 +1,21 @@
-<div class="home-page" *appShowAuth="false">
-  <div class="banner">
-    <div class="container text-center">
-      <h1 class="logo">conduit</h1>
-      <p>A place to share your knowledge.</p>
+<div class="user-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-xs-12 offset-md-1">
+        <img src="https://znews-photo-td.zadn.vn/w1024/Uploaded/bpivpjbp/2018_06_18/35226833_1437852256359941_4823004834661662720_o.jpg"
+          alt="" class="user-img">
+        <h4>cOmeOnbabie</h4>
+        <p> Đức </p>
+        <a routerLink="/setting" class="btn btn-sm btn-outline-info action-btn">
+          <i class="fa fa-cog"> Edit Profile</i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
 <div class="container content">
   <div class="row">
-    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 offset-md-1">
       <div>
         <tabset>
           <tab title="Your Feed">
@@ -27,7 +34,7 @@
                   </button>
                 </div>
               </div>
-              <a class="article-content" routerLink="['/article', article.slug]">
+              <a class="article-content" href="">
                 <h3>{{article.title}}</h3>
                 <p>{{article.description}}</p>
                 <span>Read more...</span>
@@ -50,25 +57,14 @@
                   </button>
                 </div>
               </div>
-              <a class="article-content" routerLink="['/article', article.slug]">
+              <a class="article-content" href="">
                 <h3>{{article.title}}</h3>
                 <p>{{article.description}}</p>
                 <span>Read more...</span>
               </a>
             </div>
           </tab>
-          <tab title="Tag">
-            Tag
-          </tab>
         </tabset>
-      </div>
-    </div>
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-      <div class="sidebar">
-        <p>Popular Tag</p>
-        <div class="tags-list">
-          <a class="tag" *ngFor="let tag of tags">{{tag}}</a>
-        </div>
       </div>
     </div>
   </div>

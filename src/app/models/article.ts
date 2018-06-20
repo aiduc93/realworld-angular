@@ -50,20 +50,17 @@ export class ArticleModelResponse implements Article {
 }
 
 export class ArticleModel implements Article {
-    article: Object;
+
     body: string;
     description: string;
     tagList: string[];
     title: string;
     constructor(article: Article) {
         if (article) {
-            this.article = {
-                body: article.body,
-                description: article.description,
-                tagList: article.tagList,
-                title: article.title,
-            }
-
+            this.body = article.body;
+            this.description = article.description;
+            this.tagList = article.tagList;
+            this.title = article.title;
         }
     }
 }

@@ -1,0 +1,21 @@
+$black: #000;
+$white: #fff;
+$white-1:#f3f3f3;
+$grey: #c0c0c0;
+$grey-1: #818a91;
+$grey-2: #687077;
+$green: #28a745;
+.user-info {
+    background-color: $white-1;
+    text-align: center;
+    padding: 20px 0;
+    .user-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        margin-bottom: 1rem;
+    }
+    a {
+        float: right;
+    }
+}

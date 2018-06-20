@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: '../pages/setting/setting.module#SettingModule'
     },
     {
+        path: 'profile',
+        loadChildren: '../pages/profile/profile.module#ProfileModule'
+    },
+    {
         path: '**',
         loadChildren: '../pages/no-found/no-found.module#NoFoundModule'
     },

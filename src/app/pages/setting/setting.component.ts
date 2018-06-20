@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class SettingComponent implements OnInit {
 
-
   user: UserResponse = {} as UserResponse;
   settingForm: FormGroup;
 
@@ -43,10 +42,15 @@ export class SettingComponent implements OnInit {
     const user = this.settingForm.value;
     user.password = null;
     console.log('user', user);
-    
+
     this.userService.updateUser(user).subscribe(
       updatedUser => this.router.navigateByUrl('/' + updatedUser['username']),
 
     );
+  }
+
+  logout() {
+    this.userService.clearAuth();
+    this.router.navigateByUrl('/');
   }
 }
