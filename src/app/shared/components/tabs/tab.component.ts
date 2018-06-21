@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output,EventEmitter, OnInit } from "@angular/core";
 
 @Component({
   selector: 'tab',
@@ -6,10 +6,19 @@ import { Component, Input } from "@angular/core";
     <ng-content *ngIf="active"></ng-content>
   `
 })
-export class Tab {
-
+export class Tab implements OnInit {
+  ngOnInit() {
+    console.log('selectedTab', this.selectedTab);
+    
+  }
+  @Input() key = '';
   @Input() title = '';
   @Input() active = false;
   @Input() disabled = false;
+  @Output() selectedTab = new EventEmitter<string>();
 
+  selectTab() {
+    console.log('this.key');
+    this.selectedTab.emit(this.key);
+  }
 }

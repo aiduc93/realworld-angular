@@ -8,7 +8,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule, HttpErrorResponse } from '@angular
 import { HttpTokenInterceptor } from '../interceptors/http-token-interceptor'
 import { TabComponent } from './components/tabs/tabs.component';
 import { ShowAuthDirective } from '../directives/show-auth.directive';
-
+import { ArticleInfoComponent, ArticlePreviewComponent, ArticleListComponent } from './components/article';
+import { FollowButtonComponent } from './components/button';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,11 +19,15 @@ import { ShowAuthDirective } from '../directives/show-auth.directive';
     NgbModule.forRoot(),
     HttpClientModule,
     CollapseModule.forRoot(),
-    
+
   ],
   declarations: [
     TabComponent,
-    ShowAuthDirective
+    ShowAuthDirective,
+    ArticleListComponent,
+    ArticlePreviewComponent,
+    ArticleInfoComponent,
+    FollowButtonComponent
   ],
   exports: [
     TabComponent,
@@ -30,7 +35,11 @@ import { ShowAuthDirective } from '../directives/show-auth.directive';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ShowAuthDirective
+    ShowAuthDirective,
+    ArticleListComponent,
+    ArticlePreviewComponent,
+    ArticleInfoComponent,
+    FollowButtonComponent
   ],
   providers: [
     {

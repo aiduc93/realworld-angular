@@ -1,0 +1,32 @@
+$black: #000;
+$white: #fff;
+$green: #28a745;
+.article-info {
+    display: block;
+    .info {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        .date,
+        .author {
+            display: block;
+            color: $black;
+            &:hover {
+                text-decoration: inherit;
+            }
+        }
+    }
+    .avatar>img {
+        display: inline-block;
+        vertical-align: middle;
+        height: 32px;
+        width: 32px;
+        border-radius: 30px;
+    }
+    .active {
+        color: $white;
+        background-color: $green;
+        border-color: $green;
+    }
+}

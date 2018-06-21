@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import {Article} from '../../../../models/article';
 @Component({
   selector: 'app-article-preview',
   templateUrl: './article-preview.component.html',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class ArticlePreviewComponent implements OnInit {
 
   constructor() { }
-
+  @Input() article: Article;
+  
   ngOnInit() {
+    console.log(this.article)
   }
 
 }

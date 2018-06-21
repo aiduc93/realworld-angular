@@ -9,6 +9,18 @@ export class PostArticle {
     article: ArticleModel;
 }
 
+export interface ArticleListConfig {
+    type: string;
+    filters: {
+      tag?: string,
+      author?: string,
+      favorited?: string,
+      limit?: number,
+      offset?: number
+    };
+  }
+  
+
 export interface Article {
     author?: AuthorModel;
     body: string;

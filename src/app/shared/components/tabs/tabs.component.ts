@@ -4,7 +4,8 @@ import {
   Output,
   ContentChildren,
   HostListener,
-  EventEmitter
+  EventEmitter,
+  OnInit
 } from '@angular/core';
 
 import { Tab } from './tab.component';
@@ -22,6 +23,7 @@ import { Tab } from './tab.component';
           [class.active]="tab.active">
           <a
             (click)="tabClicked(tab)"
+            (click)="setList('feed')"
             class="btn"
             [class.disabled]="tab.disabled">
             <span>{{tab.title}}</span>
@@ -35,8 +37,8 @@ import { Tab } from './tab.component';
   `,
   styleUrls: ['./tabs.component.scss']
 })
-export class Tabset {
-
+export class Tabset implements OnInit {
+  @Input() key = '';
   @Input() vertical;
   @Output() onSelect = new EventEmitter();
   @ContentChildren(Tab) tabs;
@@ -51,8 +53,14 @@ export class Tabset {
       tabs[0].active = true;
     }
   }
-
+  
+  ngOnInit() {
+    console.log('ta1111bs',this.onSelect);
+    
+  }
   tabClicked(tab) {
+    console.log('tab', tab);
+    
     const tabs = this.tabs.toArray();
 
     tabs.forEach(tab => tab.active = false);
