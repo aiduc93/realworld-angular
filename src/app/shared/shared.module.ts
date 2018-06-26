@@ -9,7 +9,7 @@ import { HttpTokenInterceptor } from '../interceptors/http-token-interceptor'
 import { TabComponent } from './components/tabs/tabs.component';
 import { ShowAuthDirective } from '../directives/show-auth.directive';
 import { ArticleInfoComponent, ArticlePreviewComponent, ArticleListComponent } from './components/article';
-import { FollowButtonComponent } from './components/button';
+import { FollowButtonComponent, FavoriteButtonComponent } from './components/button';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +27,8 @@ import { FollowButtonComponent } from './components/button';
     ArticleListComponent,
     ArticlePreviewComponent,
     ArticleInfoComponent,
-    FollowButtonComponent
+    FollowButtonComponent,
+    FavoriteButtonComponent
   ],
   exports: [
     TabComponent,
@@ -39,7 +40,8 @@ import { FollowButtonComponent } from './components/button';
     ArticleListComponent,
     ArticlePreviewComponent,
     ArticleInfoComponent,
-    FollowButtonComponent
+    FollowButtonComponent,
+    FavoriteButtonComponent
   ],
   providers: [
     {

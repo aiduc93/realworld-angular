@@ -15,7 +15,7 @@ export class ApiService {
     return this.http.get<T>(`${environment.apiUrl}${path}`,  { params });
   }
 
-  post<T>(path: string, param: HttpParams): Observable<T> {
+  post<T>(path: string, param ?: HttpParams): Observable<T> {
     return this.http.post<T>(`${environment.apiUrl}${path}`, param);
   }
 

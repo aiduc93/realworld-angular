@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArticleService } from '../../../../services/article.service';
 import { Article, ArticleModelResponse, ArticleListConfig } from '../../../../models/article';
-import { METHODS } from 'http';
 @Component({
   selector: 'app-article-list',
   templateUrl: './article-list.component.html',

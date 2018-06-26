@@ -26,8 +26,15 @@ export class ArticleService {
     }));
   }
 
+  favorite(slug): Observable<Article> {
+    return this.apiService.post('/articles/' + slug + '/favorite');
+  }
+
+  unfavorite(slug): Observable<Article> {
+    return this.apiService.delete('/articles/' + slug + '/favorite');
+  }
+
   addArticle(article): Observable<ArticlePost> {
-    console.log("1", article)
     return this.apiService.post('/articles', article);
   }
 
@@ -41,10 +48,6 @@ export class ArticleService {
       });
     console.log('parmas', params);
 
-    return this.apiService
-      .get(
-        '/articles' + ((config.type === 'feed') ? '/feed' : ''),
-        new HttpParams({ fromObject: params })
-      );
+    return this.apiService.get('/articles' + ((config.type === 'feed') ? '/feed' : ''), new HttpParams({ fromObject: params }));
   }
 }

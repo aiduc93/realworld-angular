@@ -1,0 +1,28 @@
+$grey: #c0c0c0;
+.article-preview {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);;
+}
+
+.tag-list {
+    float: right;
+    max-width: 50%;
+    vertical-align: top;
+    padding-left: 0px;
+    list-style: none;
+    .tag-pill {
+        display: inline-block;
+        font-weight: 300;
+        font-size: 0.8rem;
+        margin-right: 0.25rem;
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+        border-radius: 10rem;
+    }
+}
+
+.tag-default.tag-outline {
+    border: 1px solid #ddd;
+    color: #aaa;
+    background: none;
+}

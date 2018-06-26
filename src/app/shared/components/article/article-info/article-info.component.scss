@@ -1,6 +1,8 @@
 $black: #000;
 $white: #fff;
 $green: #28a745;
+$green-1:#5CB85C;
+$grey-1: #bbb;
 .article-info {
     display: block;
     .info {
@@ -8,10 +10,13 @@ $green: #28a745;
         vertical-align: middle;
         font-size: 0.8rem;
         margin-left: 0.5rem;
-        .date,
+        .date {
+            color: $grey-1;
+            font-size: 0.8rem;
+        }
         .author {
             display: block;
-            color: $black;
+            color: $green-1;
             &:hover {
                 text-decoration: inherit;
             }

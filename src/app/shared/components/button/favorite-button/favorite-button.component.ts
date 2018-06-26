@@ -7,12 +7,13 @@ import { concatMap } from 'rxjs/operators/concatMap';
 import { tap } from 'rxjs/operators/tap';
 import { of } from 'rxjs/observable/of';
 import { ArticleService } from '../../../../services/article.service';
+
 @Component({
-  selector: 'app-follow-button',
-  templateUrl: './follow-button.component.html',
-  styleUrls: ['./follow-button.component.scss']
+  selector: 'app-favorite-button',
+  templateUrl: './favorite-button.component.html',
+  styleUrls: ['./favorite-button.component.scss']
 })
-export class FollowButtonComponent implements OnInit {
+export class FavoriteButtonComponent implements OnInit {
 
   constructor(
     private articlesService: ArticleService,
@@ -22,39 +23,38 @@ export class FollowButtonComponent implements OnInit {
   @Input() article: Article;
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
-
-
-  toggleFollowing() {
-    console.log('toggleFollowing');
-    
+  toggleFavorite() {
     this.isSubmitting = true;
+
     this.userService.isAuthenticated.pipe(concatMap(
       (authenticated) => {
         if (!authenticated) {
           this.router.navigateByUrl('/login');
           return of(null);
         }
-
         if (!this.article.favorited) {
-          return this.articlesService.favorite(this.article.slug).pipe(tap(
-            data => {
-              this.isSubmitting = false;
-              this.toggle.emit(true);
-            },
-            err => this.isSubmitting = false
-          ));
+          return this.articlesService.favorite(this.article.slug)
+            .pipe(tap(
+              data => {
+                this.isSubmitting = false;
+                this.toggle.emit(true);
+              },
+              err => this.isSubmitting = false
+            ));
         } else {
-          return this.articlesService.unfavorite(this.article.slug).pipe(tap(
-            data => {
-              this.isSubmitting = false;
-              this.toggle.emit(false);
-            },
-            err => this.isSubmitting = false
-          ));
+          return this.articlesService.unfavorite(this.article.slug)
+            .pipe(tap(
+              data => {
+                this.isSubmitting = false;
+                this.toggle.emit(false);
+              },
+              err => this.isSubmitting = false
+            ));
         }
       }
     )).subscribe();
   }
+
   ngOnInit() {
   }
 
