@@ -41,6 +41,7 @@ export class ArticleListComponent implements OnInit {
   runQuery() {
     this.loading = true;
     this.articles = [];
+    console.log('runQuery', this.limit);
 
     if (this.limit) {
       this.query.filters.limit = this.limit;
@@ -50,8 +51,6 @@ export class ArticleListComponent implements OnInit {
     this.articleService.query(this.query).subscribe(data => {
       this.loading = false;
       this.articles = data.articles;
-      console.log('this.articles', this.articles);
-      
       this.totalPages = Array.from(new Array(Math.ceil(data.articlesCount / this.limit)), (value, index) => index + 1);
     })
   }

@@ -5,8 +5,9 @@ import { UserService } from '../../../../services/user.service';
 import { Router } from '@angular/router';
 import { concatMap } from 'rxjs/operators/concatMap';
 import { tap } from 'rxjs/operators/tap';
-import { of } from 'rxjs/observable/of';
+// import { of } from 'rxjs/observable/of';
 import { ArticleService } from '../../../../services/article.service';
+import { of } from 'rxjs/observable/of';
 
 @Component({
   selector: 'app-favorite-button',

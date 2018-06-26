@@ -63,7 +63,14 @@ $green: #28a745;
 //         text-decoration: inherit;
 //     }
 // }
-
+.feed-toggle {
+    .active {
+        color: $green;
+        background-color: transparent;
+        border-bottom: 2px solid $green;
+        border-radius: 0;
+    }
+}
 .sidebar {
     background-color: $white-1;
     padding: 0.5rem 0.5rem;

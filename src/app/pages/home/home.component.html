@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item" [hidden]="!listConfig.filters.tag">
             <a class="nav-link active">
-              <i class="ion-pound"></i> {{ listConfig.filters.tag }}
+              <i class="ion-pound"></i># {{ listConfig.filters.tag }}
             </a>
           </li>
         </ul>
@@ -35,7 +35,7 @@
       <div class="sidebar">
         <p>Popular Tag</p>
         <div class="tags-list">
-          <a class="tag" *ngFor="let tag of tags">{{tag}}</a>
+          <a class="tag" *ngFor="let tag of tags" (click)="setList('all', {tag: tag})">{{tag}}</a>
         </div>
       </div>
     </div>

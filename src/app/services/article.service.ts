@@ -46,8 +46,6 @@ export class ArticleService {
       .forEach((key) => {
         params[key] = config.filters[key];
       });
-    console.log('parmas', params);
-
     return this.apiService.get('/articles' + ((config.type === 'feed') ? '/feed' : ''), new HttpParams({ fromObject: params }));
   }
 }

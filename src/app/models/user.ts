@@ -1,4 +1,4 @@
-interface User {
+export interface User {
     bio: string;
     createdAt: string;
     email: string;
@@ -6,7 +6,7 @@ interface User {
     image: string;
     token: string;
     updatedAt: string;
-    username: boolean;
+    username: string;
     password ?: string;
 }
 
@@ -18,7 +18,7 @@ export class UserResponse implements User {
     image: string;
     token: string;
     updatedAt: string;
-    username: boolean;
+    username: string;
     password: string;
     constructor(user: User) {
         if (user) {

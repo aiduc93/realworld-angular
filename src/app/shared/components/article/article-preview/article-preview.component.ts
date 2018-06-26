@@ -22,7 +22,6 @@ export class ArticlePreviewComponent implements OnInit {
     }
   }
   ngOnInit() {
-    console.log(this.article)
   }
 
 }

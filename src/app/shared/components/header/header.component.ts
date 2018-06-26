@@ -14,7 +14,9 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getUser()
+    this.getUser();
+    console.log('vaof');
+    
   }
   
   getUser() {
