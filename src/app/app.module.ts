@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { HomeModule } from './pages/home/home.module';
-import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderComponent, FooterComponent } from './shared/components';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './routers/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

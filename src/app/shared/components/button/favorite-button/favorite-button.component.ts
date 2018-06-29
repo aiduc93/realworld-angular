@@ -34,23 +34,19 @@ export class FavoriteButtonComponent implements OnInit {
           return of(null);
         }
         if (!this.article.favorited) {
-          return this.articlesService.favorite(this.article.slug)
-            .pipe(tap(
-              data => {
-                this.isSubmitting = false;
-                this.toggle.emit(true);
-              },
-              err => this.isSubmitting = false
-            ));
+          return this.articlesService.favorite(this.article.slug).pipe(tap(data => {
+            this.isSubmitting = false;
+            this.toggle.emit(true);
+          },
+            err => this.isSubmitting = false
+          ));
         } else {
-          return this.articlesService.unfavorite(this.article.slug)
-            .pipe(tap(
-              data => {
-                this.isSubmitting = false;
-                this.toggle.emit(false);
-              },
-              err => this.isSubmitting = false
-            ));
+          return this.articlesService.unfavorite(this.article.slug).pipe(tap(data => {
+            this.isSubmitting = false;
+            this.toggle.emit(false);
+          },
+            err => this.isSubmitting = false
+          ));
         }
       }
     )).subscribe();

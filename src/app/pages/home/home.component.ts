@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   isAuthenticated: boolean;
   private articlesList: ArticleModelResponse[];
-  private tags: Tag[];
+  public tags: Tag[];
 
   listConfig: ArticleListConfig = {
     type: 'all',

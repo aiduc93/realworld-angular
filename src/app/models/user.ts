@@ -7,7 +7,7 @@ export interface User {
     token: string;
     updatedAt: string;
     username: string;
-    password ?: string;
+    password?: string;
 }
 
 export class UserResponse implements User {
@@ -38,6 +38,8 @@ export class UserResponse implements User {
 export class UserPost {
     user: UserResponse
     constructor(user: UserResponse) {
-        this.user = user;
+        if (user) {
+            this.user = user;
+        }
     }
 }
